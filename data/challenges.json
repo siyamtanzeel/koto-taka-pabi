@@ -1,0 +1,66 @@
+[
+  {
+    "id": "7c8a4265",
+    "title": "dfhszdf",
+    "creatorName": "fbhdfgnh",
+    "maxAmount": 1000,
+    "questions": [
+      {
+        "id": "q-1",
+        "question": "zsxdfbg",
+        "options": [
+          "zv",
+          "zb",
+          "dfgh",
+          "zsdg"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "createdAt": "2026-03-19T22:03:37.728Z"
+  },
+  {
+    "id": "0bbce06b",
+    "title": "Eid Salami",
+    "creatorName": "Tanzeel",
+    "maxAmount": 500,
+    "questions": [
+      {
+        "id": "q-1",
+        "question": "My Department",
+        "options": [
+          "Mathematics",
+          "CHEMISTRY",
+          "Physics",
+          "Biology"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": "q-2",
+        "question": "my Batch",
+        "options": [
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": "q-3",
+        "question": "my gf",
+        "options": [
+          "Anika",
+          "Monika",
+          "Konika",
+          "Tanika"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "isClosed": false,
+    "adminToken": "8bdf0325-cdc8-49dc-ba17-d6c0b5be0128",
+    "createdAt": "2026-03-19T22:38:03.106Z"
+  }
+]
