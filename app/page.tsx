@@ -22,11 +22,16 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const addQuestion = () => {
-    setQuestions((prev) => [...prev, { question: "", options: ["", "", "", ""], correctIndex: 0 }]);
+    setQuestions((prev) => [
+      ...prev,
+      { question: "", options: ["", "", "", ""], correctIndex: 0 },
+    ]);
   };
 
   const updateQuestion = (index: number, value: string) => {
-    setQuestions((prev) => prev.map((q, i) => (i === index ? { ...q, question: value } : q)));
+    setQuestions((prev) =>
+      prev.map((q, i) => (i === index ? { ...q, question: value } : q)),
+    );
   };
 
   const updateOption = (qIndex: number, optionIndex: number, value: string) => {
@@ -43,7 +48,9 @@ export default function Home() {
   };
 
   const updateCorrect = (qIndex: number, value: number) => {
-    setQuestions((prev) => prev.map((q, i) => (i === qIndex ? { ...q, correctIndex: value } : q)));
+    setQuestions((prev) =>
+      prev.map((q, i) => (i === qIndex ? { ...q, correctIndex: value } : q)),
+    );
   };
 
   const createChallenge = async () => {
@@ -56,7 +63,11 @@ export default function Home() {
       return;
     }
 
-    if (questions.some((q) => !q.question.trim() || q.options.some((o) => !o.trim()))) {
+    if (
+      questions.some(
+        (q) => !q.question.trim() || q.options.some((o) => !o.trim()),
+      )
+    ) {
       setError("সব প্রশ্ন ও ৪টা option পূরণ করুন।");
       return;
     }
@@ -74,7 +85,11 @@ export default function Home() {
         }),
       });
 
-      const data = (await response.json()) as { shareLink?: string; manageLink?: string; error?: string };
+      const data = (await response.json()) as {
+        shareLink?: string;
+        manageLink?: string;
+        error?: string;
+      };
       if (!response.ok || !data.shareLink) {
         setError(data.error ?? "Challenge create করা যায়নি।");
         return;
@@ -94,11 +109,12 @@ export default function Home() {
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-10">
       <ReactBitsSplitText
-        text="Salami Challenge Builder"
+        text="Salami koto pabi?"
         className="text-3xl font-bold text-violet-700 md:text-5xl"
       />
       <p className="text-zinc-600">
-        Question তৈরি করুন, link share করুন, আর score percentage অনুযায়ী salami payout হিসাব হবে।
+        Question তৈরি করুন, link share করুন, আর score percentage অনুযায়ী salami
+        payout হিসাব হবে।
       </p>
 
       <section className="space-y-4 rounded-2xl bg-white p-5 shadow-sm">
@@ -136,14 +152,17 @@ export default function Home() {
 
         <div className="space-y-4">
           {questions.map((question, qIndex) => (
-            <div key={`q-${qIndex}`} className="rounded-xl border border-zinc-200 p-4">
+            <div
+              key={`q-${qIndex}`}
+              className="rounded-xl border border-zinc-200 p-4">
               <div className="mb-3 flex items-center justify-between">
                 <p className="font-semibold">Question {qIndex + 1}</p>
                 <select
                   className="rounded-lg border border-zinc-300 px-2 py-1 text-sm"
                   value={question.correctIndex}
-                  onChange={(event) => updateCorrect(qIndex, Number(event.target.value))}
-                >
+                  onChange={(event) =>
+                    updateCorrect(qIndex, Number(event.target.value))
+                  }>
                   <option value={0}>Correct: Option 1</option>
                   <option value={1}>Correct: Option 2</option>
                   <option value={2}>Correct: Option 3</option>
@@ -162,7 +181,9 @@ export default function Home() {
                     key={`o-${qIndex}-${optionIndex}`}
                     className="rounded-lg border border-zinc-300 px-3 py-2 outline-none ring-violet-300 focus:ring"
                     value={option}
-                    onChange={(event) => updateOption(qIndex, optionIndex, event.target.value)}
+                    onChange={(event) =>
+                      updateOption(qIndex, optionIndex, event.target.value)
+                    }
                     placeholder={`Option ${optionIndex + 1}`}
                   />
                 ))}
@@ -175,31 +196,37 @@ export default function Home() {
           <button
             type="button"
             onClick={addQuestion}
-            className="rounded-xl bg-zinc-900 px-4 py-2 font-medium text-white hover:bg-zinc-700"
-          >
+            className="rounded-xl bg-zinc-900 px-4 py-2 font-medium text-white hover:bg-zinc-700">
             + Add Question
           </button>
           <button
             type="button"
             onClick={() => void createChallenge()}
             disabled={loading}
-            className="rounded-xl bg-violet-600 px-4 py-2 font-semibold text-white hover:bg-violet-700 disabled:opacity-50"
-          >
+            className="rounded-xl bg-violet-600 px-4 py-2 font-semibold text-white hover:bg-violet-700 disabled:opacity-50">
             {loading ? "Creating..." : "Create & Generate Link"}
           </button>
         </div>
 
-        {error && <p className="rounded-xl bg-rose-100 p-3 text-rose-700">{error}</p>}
+        {error && (
+          <p className="rounded-xl bg-rose-100 p-3 text-rose-700">{error}</p>
+        )}
         {shareLink && (
           <div className="rounded-xl bg-emerald-100 p-3">
             <p className="font-medium text-emerald-800">Share this link:</p>
-            <a className="break-all text-emerald-900 underline" href={shareLink}>
+            <a
+              className="break-all text-emerald-900 underline"
+              href={shareLink}>
               {shareLink}
             </a>
             {manageLink && (
               <>
-                <p className="mt-3 font-medium text-amber-800">Admin manage link (secret):</p>
-                <a className="break-all text-amber-900 underline" href={manageLink}>
+                <p className="mt-3 font-medium text-amber-800">
+                  Admin manage link (secret):
+                </p>
+                <a
+                  className="break-all text-amber-900 underline"
+                  href={manageLink}>
                   {manageLink}
                 </a>
               </>
@@ -207,6 +234,15 @@ export default function Home() {
           </div>
         )}
       </section>
+      <footer className="text-slate-500">
+        All rights reserved by{" "}
+        <a
+          href="https://www.facebook.com/siyamtanzeel"
+          target="_blank"
+          className="text-slate-900">
+          Muhammad Tanzeel
+        </a>
+      </footer>
     </main>
   );
 }
