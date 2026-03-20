@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Salami koto Pabi?",
+  title: "Salami koto Paba?",
   description: "quiz based salami payout app",
 };
 
