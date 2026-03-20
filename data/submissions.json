@@ -37,5 +37,18 @@
     "percentage": 66.67,
     "payout": 333.33,
     "generatedAt": "2026-03-19T22:41:03.863Z"
+  },
+  {
+    "id": "be73ce6b-a29",
+    "challengeId": "e05ca849",
+    "challengeTitle": "sf",
+    "creatorName": "sdfg",
+    "playerName": "ে্ো",
+    "maxAmount": 1000,
+    "totalQuestions": 1,
+    "correctAnswers": 1,
+    "percentage": 100,
+    "payout": 1000,
+    "generatedAt": "2026-03-20T00:42:41.274Z"
   }
 ]

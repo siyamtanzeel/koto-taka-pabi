@@ -62,5 +62,27 @@
     "isClosed": false,
     "adminToken": "8bdf0325-cdc8-49dc-ba17-d6c0b5be0128",
     "createdAt": "2026-03-19T22:38:03.106Z"
+  },
+  {
+    "id": "e05ca849",
+    "title": "sf",
+    "creatorName": "sdfg",
+    "maxAmount": 1000,
+    "questions": [
+      {
+        "id": "q-1",
+        "question": "sdf",
+        "options": [
+          "sfb",
+          "zsxdcv",
+          "vs",
+          "zsdv"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "isClosed": false,
+    "adminToken": "0c54ea00-2e4d-4e15-90f0-7cb74488488c",
+    "createdAt": "2026-03-20T00:41:24.418Z"
   }
 ]

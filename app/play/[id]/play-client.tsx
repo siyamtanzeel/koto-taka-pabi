@@ -156,7 +156,7 @@ export default function PlayClient({ challengeId }: { challengeId: string }) {
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-4 py-10">
       <ReactBitsSplitText
-        text="Salami Challenge Play"
+        text="Salami koto paba?"
         className="text-3xl font-bold text-violet-700 md:text-5xl"
       />
 
@@ -168,13 +168,9 @@ export default function PlayClient({ challengeId }: { challengeId: string }) {
       {challenge && !result && (
         <section className="space-y-4 rounded-2xl bg-white p-5 shadow-sm">
           <p className="text-sm text-zinc-500">
-            Creator: {challenge.creatorName}
+            সালামি দিবেন: {challenge.creatorName}
           </p>
           <h1 className="text-2xl font-semibold">{challenge.title}</h1>
-          <p className="text-sm">
-            Highest Amount:{" "}
-            <span className="font-semibold">৳{challenge.maxAmount}</span>
-          </p>
           {challenge.isClosed && (
             <p className="rounded-lg bg-amber-100 px-3 py-2 text-sm font-medium text-amber-700">
               এই challenge বন্ধ করা হয়েছে। নতুন submit নেওয়া হচ্ছে না।
@@ -295,16 +291,20 @@ export default function PlayClient({ challengeId }: { challengeId: string }) {
           <button
             type="button"
             onClick={() => void downloadReceipt()}
-            className="rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white hover:bg-emerald-700">
+            className="rounded-xl bg-violet-700 px-4 py-3 font-semibold text-white hover:bg-violet-900 transition-colors duration-300">
             Receipt PNG Download
           </button>
-          <a
-            href={`/receipt?rid=${result.id}`}
-            className="inline-block rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
-            Verify This Receipt
-          </a>
         </section>
       )}
+      <footer className="text-slate-500">
+        All rights reserved by{" "}
+        <a
+          href="https://www.facebook.com/siyamtanzeel"
+          target="_blank"
+          className="text-slate-900">
+          Muhammad Tanzeel
+        </a>
+      </footer>
     </main>
   );
 }
