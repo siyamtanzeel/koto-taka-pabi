@@ -15,6 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Salami koto Paba?",
   description: "quiz based salami payout app",
+  openGraph: {
+    images: [
+      {
+        url: "https://i.ibb.co.com/cSKjZJXQ/opengraph-image.jpg",
+        width: 1024,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
