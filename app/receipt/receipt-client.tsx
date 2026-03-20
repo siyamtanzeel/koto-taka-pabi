@@ -154,11 +154,11 @@ export default function ReceiptClient() {
                 {receipt.challengeTitle}
               </p>
               <p>
-                <span className="font-medium">Creator:</span>{" "}
+                <span className="font-medium">সালামি দিবেন:</span>{" "}
                 {receipt.creatorName}
               </p>
               <p>
-                <span className="font-medium">Player:</span>{" "}
+                <span className="font-medium">সালামি পাবেন:</span>{" "}
                 {receipt.playerName}
               </p>
               <p>
