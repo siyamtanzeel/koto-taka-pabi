@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://i.ibb.co.com/cSKjZJXQ/opengraph-image.jpg",
+        url: "https://i.ibb.co.com/MDyPrnzy/salami-koto-paba-app-preview-wide.png",
         width: 1024,
         height: 1024,
       },
